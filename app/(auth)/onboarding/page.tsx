@@ -5,14 +5,14 @@ export default async function Page() {
   const user = await currentUser()
 
   const userInfo = {}
-
+  
   const userData = {
-    id: user.id,
+    id: user?.id,
     objectId: userInfo?._id,
-    username: userInfo ? userInfo?.username : user.username,
-    name: userInfo ? userInfo?.name : user.firstName ?? "",
+    username: userInfo ? userInfo?.username : user?.username,
+    name: userInfo ? userInfo?.name : user?.firstName ?? "",
     bio: userInfo ? userInfo?.bio : "",
-    image: userInfo ? userInfo?.image : user.imageUrl,
+    image: userInfo ? userInfo?.image : user?.imageUrl,
   };
 
   return (
